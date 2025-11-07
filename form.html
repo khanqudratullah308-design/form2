@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Review Form</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #222;
+      padding: 24px;
+    }
+
+    .form-wrap {
+      max-width: 880px;
+      margin: 12px auto;
+      border: 2px solid #999;
+      padding: 14px;
+      box-sizing: border-box;
+    }
+
+    fieldset {
+      border: 2px solid #999;
+      margin: 14px 0;
+      padding: 12px 16px;
+      position: relative;
+    }
+
+    legend {
+      padding: 0 8px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* simple line-style inputs to mimic the photo */
+    .line-input {
+      border: none;
+      border-bottom: 2px solid #999;
+      padding: 6px 8px;
+      width: 60%;
+      max-width: 560px;
+      font-size: 15px;
+      outline: none;
+      box-sizing: border-box;
+      background: transparent;
+    }
+
+    .full-width {
+      width: 100%;
+      max-width: 820px;
+    }
+
+    select.line-input {
+      border-bottom: 2px solid #999;
+      padding-right: 26px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: transparent;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    textarea {
+      width: 70%;
+      max-width: 600px;
+      min-height: 90px;
+      border: 2px solid #ddd;
+      padding: 8px;
+      font-size: 14px;
+      resize: vertical;
+    }
+
+    .option-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .submit-row {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 8px 12px;
+      border: 1px solid #777;
+      background: #f5f5f5;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+
+    /* small check label style like image */
+    .small-label {
+      font-size: 14px;
+      color: #222;
+    }
+
+    /* responsive */
+    @media (max-width: 640px) {
+      .line-input, textarea { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <form class="form-wrap" action="#" method="post" aria-labelledby="reviewTitle">
+    <h2 id="reviewTitle" style="margin:0 0 8px 0; font-size:16px; display:none;">Review form</h2>
+
+    <fieldset>
+      <legend>Your Details:</legend>
+      <div class="row">
+        <div>
+          <label for="name">Name:</label><br />
+          <input id="name" name="name" class="line-input" type="text" placeholder="">
+        </div>
+
+        <div>
+          <label for="email">Email:</label><br />
+          <input id="email" name="email" class="line-input" type="email" placeholder="">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Review:</legend>
+
+      <div style="margin-bottom:10px;">
+        <label for="heard">How did you hear about us?</label><br />
+        <select id="heard" name="heard" class="line-input" aria-label="How did you hear about us?">
+          <option value="">-- select --</option>
+          <option value="google" selected>Google</option>
+          <option value="friend">Friend</option>
+          <option value="ad">Advertisement</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:10px;">
+        <label>Would you visit again?</label>
+        <div class="radio-group" role="radiogroup" aria-labelledby="visit-again">
+          <label><input type="radio" name="visit" value="yes"> Yes</label>
+          <label><input type="radio" name="visit" value="no"> No</label>
+          <label><input type="radio" name="visit" value="maybe"> Maybe</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="comments">Comments:</label><br />
+        <textarea id="comments" name="comments" placeholder="Write your comments..."></textarea>
+      </div>
+
+      <div class="option-row">
+        <label style="display:flex; align-items:center; gap:8px;">
+          <input type="checkbox" id="subscribe" name="subscribe" checked>
+          <span class="small-label">Sign me up for email updates</span>
+        </label>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="btn">Submit review</button>
+      </div>
+    </fieldset>
+  </form>
+
+</body>
+</html>
